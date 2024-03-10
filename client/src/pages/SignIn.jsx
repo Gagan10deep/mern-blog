@@ -22,7 +22,7 @@ export default function SignIn() {
       return dispatch(signInFailure("Please fill all the fields"));
     }
     try {
-      dispatch(signInStart());
+       dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,6 +37,7 @@ export default function SignIn() {
         dispatch(signInSuccess(data));
         navigate("/");
       }
+      // dispatch(signInFailure("Unexpected Error!"));
     } catch (error) {
       dispatch(signInFailure(error.message));
     }
