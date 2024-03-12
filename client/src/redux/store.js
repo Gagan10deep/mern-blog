@@ -16,9 +16,9 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer, // combine reducer with persist
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({ serializableCheck: false }), // middle for error checking
+    getDefaultMiddleware({ serializableCheck: false }), // defualt middleware to check error which occurs in redux store
 });
 
 export const persistor = persistStore(store);
