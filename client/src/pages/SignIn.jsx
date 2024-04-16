@@ -33,6 +33,7 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
+
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");
@@ -58,6 +59,7 @@ export default function SignIn() {
           </p>
         </div>
         {/* right */}
+
         <div className="flex-1">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
@@ -81,9 +83,9 @@ export default function SignIn() {
             <Button
               gradientDuoTone="purpleToPink"
               type="submit"
-              disabled={loading}
+              disabled={false}
             >
-              {loading ? (
+              {false ? (
                 <>
                   <Spinner size="sm" />
                   <span className="pl-3">Loading...</span>
